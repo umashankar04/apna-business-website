@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 import { Menu, X, Rocket } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <RouterLink to="/" className="flex-shrink-0 flex items-center cursor-pointer">
-            <img src="/logo.png" alt="Apna Business Logo" className="h-10 w-auto" />
+            <img src={logo} alt="Apna Business Logo" className="h-10 w-auto" />
           </RouterLink>
 
           <div className="hidden md:flex items-center space-x-8">
