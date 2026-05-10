@@ -1,11 +1,13 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import InquiryForm from './pages/InquiryForm';
+import React from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import InquiryForm from "./pages/InquiryForm";
+import StructuredData from "./components/StructuredData";
 
 function App() {
   return (
     <Router>
+      <StructuredData />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/inquiry" element={<InquiryForm />} />

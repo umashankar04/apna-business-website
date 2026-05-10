@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { CheckCircle, CheckCircle2 } from 'lucide-react';
-import ownerImage from '../assets/owner.png';
+import React from "react";
+import { motion } from "framer-motion";
+import { CheckCircle, CheckCircle2 } from "lucide-react";
+import ownerImage from "../assets/owner.png";
 
 const About = () => {
   return (
@@ -16,15 +16,14 @@ const About = () => {
             className="relative"
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Our Team" 
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Our Team"
                 className="rounded-2xl shadow-2xl relative z-10 w-full h-[500px] object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500"
               />
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-emerald-500/20 rounded-full blur-2xl"></div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
             </div>
-            
           </motion.div>
 
           <motion.div
@@ -33,23 +32,31 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h4 className="text-emerald-500 font-semibold tracking-wider uppercase mb-3 text-sm">Who We Are</h4>
+            <h4 className="text-emerald-500 font-semibold tracking-wider uppercase mb-3 text-sm">
+              Who We Are
+            </h4>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               Transforming Ideas Into <br className="hidden md:block" />
               <span className="text-slate-400">Digital Reality</span>
             </h2>
             <p className="text-slate-400 mb-8 leading-relaxed text-lg">
-              Apna Business is a premier digital growth agency dedicated to helping businesses create a dominant online presence. We combine cutting-edge technology, creative design, and data-driven marketing solutions to accelerate your growth.
+              Apna Business is a premier digital growth agency dedicated to
+              helping businesses create a dominant online presence. We combine
+              cutting-edge technology, creative design, and data-driven
+              marketing solutions to accelerate your growth.
             </p>
 
             <ul className="space-y-4 mb-10">
               {[
-                'Innovative Digital Strategies',
-                'Award-Winning Design Team',
-                'Data-Driven Marketing Campaigns',
-                'Dedicated 24/7 Support'
+                "Innovative Digital Strategies",
+                "Award-Winning Design Team",
+                "Data-Driven Marketing Campaigns",
+                "Dedicated 24/7 Support",
               ].map((item, index) => (
-                <li key={index} className="flex items-center text-slate-300 font-medium">
+                <li
+                  key={index}
+                  className="flex items-center text-slate-300 font-medium"
+                >
                   <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mr-3 flex-shrink-0 border border-emerald-500/30">
                     <CheckCircle className="w-4 h-4" />
                   </div>
@@ -59,10 +66,18 @@ const About = () => {
             </ul>
 
             <div className="mt-8 bg-slate-950 p-6 rounded-2xl border border-slate-800 inline-flex items-center gap-5 shadow-lg">
-              <img src={ownerImage} alt="Mr. Umashankar Pradhan" className="w-16 h-16 rounded-full border-2 border-emerald-500/50 object-cover shadow-lg shadow-emerald-500/20" />
+              <img
+                src={ownerImage}
+                alt="Mr. Umashankar Pradhan"
+                className="w-16 h-16 rounded-full border-2 border-emerald-500/50 object-cover shadow-lg shadow-emerald-500/20"
+              />
               <div>
-                <p className="text-sm text-emerald-400 font-semibold tracking-wider uppercase mb-1">Founder & Owner</p>
-                <h4 className="text-xl font-bold text-white">Mr. Umashankar Pradhan</h4>
+                <p className="text-sm text-emerald-400 font-semibold tracking-wider uppercase mb-1">
+                  Founder & Owner
+                </p>
+                <h4 className="text-xl font-bold text-white">
+                  Mr. Umashankar Pradhan
+                </h4>
               </div>
             </div>
           </motion.div>
