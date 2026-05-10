@@ -49,17 +49,6 @@ const Hero = () => {
               </RouterLink>
             </div>
             
-            <div className="mt-10 flex items-center gap-6 text-sm text-slate-400 font-medium">
-              <div className="flex -space-x-3">
-                <img className="w-10 h-10 rounded-full border-2 border-slate-900" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Client" />
-                <img className="w-10 h-10 rounded-full border-2 border-slate-900" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Client" />
-                <img className="w-10 h-10 rounded-full border-2 border-slate-900" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Client" />
-                <div className="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-xs text-slate-300">
-                  +1k
-                </div>
-              </div>
-              <p>Trusted by 1000+ businesses</p>
-            </div>
           </motion.div>
 
           <motion.div

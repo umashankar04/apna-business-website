@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket, Globe, Mail, Phone, MessageSquare } from 'lucide-react';
+import { Rocket, Globe, Mail, Phone, MessageSquare, Instagram } from 'lucide-react';
 import { Link } from 'react-scroll';
 
 const Footer = () => {
@@ -21,8 +21,8 @@ const Footer = () => {
               <a href="#" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-emerald-500 hover:text-white transition-all">
                 <Globe className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-emerald-500 hover:text-white transition-all">
-                <MessageSquare className="h-5 w-5" />
+              <a href="https://www.instagram.com/pradhan04_?igsh=MTBtenFtcXI3c3lqYg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-emerald-500 hover:text-white transition-all">
+                <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-emerald-500 hover:text-white transition-all">
                 <Phone className="h-5 w-5" />

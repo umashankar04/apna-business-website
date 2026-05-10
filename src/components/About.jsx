@@ -24,11 +24,6 @@ const About = () => {
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
             </div>
             
-            {/* Experience Badge */}
-            <div className="absolute -bottom-8 -right-8 bg-slate-800 border border-slate-700 text-white p-8 rounded-3xl shadow-xl hidden md:block">
-              <p className="text-4xl font-bold text-emerald-400 mb-1">1+</p>
-              <p className="text-sm font-medium text-slate-400">Years of<br />Experience</p>
-            </div>
           </motion.div>
 
           <motion.div
@@ -62,15 +57,13 @@ const About = () => {
               ))}
             </ul>
 
-            <div className="flex items-center gap-6">
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-white">6+</span>
-                <span className="text-sm text-slate-500 font-medium">Projects Completed</span>
+            <div className="mt-8 bg-slate-950 p-6 rounded-2xl border border-slate-800 inline-flex items-center gap-5 shadow-lg">
+              <div className="w-14 h-14 bg-emerald-500/20 rounded-full flex items-center justify-center text-emerald-400 font-bold text-2xl border border-emerald-500/30">
+                U
               </div>
-              <div className="w-px h-12 bg-slate-800"></div>
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-white">100%</span>
-                <span className="text-sm text-slate-500 font-medium">Client Satisfaction</span>
+              <div>
+                <p className="text-sm text-emerald-400 font-semibold tracking-wider uppercase mb-1">Founder & Owner</p>
+                <h4 className="text-xl font-bold text-white">Mr. Umashankar Pradhan</h4>
               </div>
             </div>
           </motion.div>
