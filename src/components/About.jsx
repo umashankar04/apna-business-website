@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, CheckCircle2 } from 'lucide-react';
+import ownerImage from '../assets/owner.png';
 
 const About = () => {
   return (
@@ -58,9 +59,7 @@ const About = () => {
             </ul>
 
             <div className="mt-8 bg-slate-950 p-6 rounded-2xl border border-slate-800 inline-flex items-center gap-5 shadow-lg">
-              <div className="w-14 h-14 bg-emerald-500/20 rounded-full flex items-center justify-center text-emerald-400 font-bold text-2xl border border-emerald-500/30">
-                U
-              </div>
+              <img src={ownerImage} alt="Mr. Umashankar Pradhan" className="w-16 h-16 rounded-full border-2 border-emerald-500/50 object-cover shadow-lg shadow-emerald-500/20" />
               <div>
                 <p className="text-sm text-emerald-400 font-semibold tracking-wider uppercase mb-1">Founder & Owner</p>
                 <h4 className="text-xl font-bold text-white">Mr. Umashankar Pradhan</h4>
