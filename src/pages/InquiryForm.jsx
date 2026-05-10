@@ -53,7 +53,8 @@ const InquiryForm = () => {
           <div className="bg-slate-900 text-white p-10 rounded-3xl shadow-[0_0_40px_rgba(16,185,129,0.1)] relative overflow-hidden border border-slate-800">
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 relative z-10 text-white">Apna Business – Client Service Inquiry</h1>
+            <img src="/logo.png" alt="Apna Business Logo" className="h-16 w-auto mb-6 relative z-10" />
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 relative z-10 text-white">Client Service Inquiry</h1>
             <p className="text-slate-400 text-lg max-w-2xl relative z-10 leading-relaxed">
               We help businesses grow through website development, social media management, branding, digital marketing, and AI-powered business solutions.
             </p>

@@ -25,12 +25,9 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass-dark py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex-shrink-0 flex items-center cursor-pointer">
-            <Rocket className="h-8 w-8 text-emerald-500 mr-2" />
-            <span className="font-bold text-2xl tracking-tight text-white">
-              Apna <span className="text-gradient">Business</span>
-            </span>
-          </div>
+          <RouterLink to="/" className="flex-shrink-0 flex items-center cursor-pointer">
+            <img src="/logo.png" alt="Apna Business Logo" className="h-10 w-auto" />
+          </RouterLink>
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (

@@ -17,10 +17,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
-              <Rocket className="h-8 w-8 text-emerald-500 mr-2" />
-              <span className="font-bold text-2xl tracking-tight text-white">
-                Apna <span className="text-emerald-500">Business</span>
-              </span>
+              <img src="/logo.png" alt="Apna Business Logo" className="h-12 w-auto" />
             </div>
             <p className="text-slate-400 mb-8 leading-relaxed">
               We help startups and local businesses grow online with modern digital solutions, branding, and AI automation.
