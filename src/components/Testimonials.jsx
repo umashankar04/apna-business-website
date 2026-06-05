@@ -1,10 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import {
-  buildAiImageUrl,
-  useAiImageRotation,
-} from "../hooks/useAiImageRotation";
 
 const testimonials = [
   {
@@ -56,8 +52,6 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  const tick = useAiImageRotation();
-
   return (
     <section id="testimonials" className="py-16 md:py-24 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -98,12 +92,7 @@ const Testimonials = () => {
               <div className="flex items-center">
                 {testimonial.image && (
                   <img
-                    src={buildAiImageUrl(
-                      `professional portrait of an indian business owner, trustworthy, friendly, premium testimonial avatar ${testimonial.name}`,
-                      240,
-                      240,
-                      tick + index + 61,
-                    )}
+                    src={testimonial.image}
                     alt={testimonial.name}
                     loading="lazy"
                     className="w-12 h-12 md:w-14 md:h-14 rounded-full mr-3 md:mr-4 object-cover border-2 border-slate-800"

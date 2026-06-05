@@ -1,38 +1,32 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { PlayCircle, Sparkles, ArrowUpRight } from "lucide-react";
-import {
-  buildAiImageUrl,
-  useAiImageRotation,
-} from "../hooks/useAiImageRotation";
 
 const demos = [
   {
     title: "Local Business Launch",
     label: "Flow Menu Experience",
     desc: "Smooth navigation, bold sections, and a conversion-first homepage flow for service brands.",
-    prompt:
-      "premium website design dashboard and local business marketing scene, futuristic but realistic, cinematic light",
+    image:
+      "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
   },
   {
     title: "Product Showcase",
     label: "Pixel Transition Demo",
     desc: "Interactive cards with a pixel-style reveal that makes the gallery feel tactile and premium.",
-    prompt:
-      "luxury product showcase with pixel art transition feeling, digital storefront, sleek modern composition",
+    image:
+      "https://images.pexels.com/photos/3761509/pexels-photo-3761509.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
   },
   {
     title: "AI Service Studio",
     label: "Slash Cursor Motion",
     desc: "Desktop-only cursor treatment that adds a sharp, editorial feel without blocking usability.",
-    prompt:
-      "artistic ai powered service studio workspace, neon accents, editorial agency, clean modern layers",
+    image:
+      "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200&q=80",
   },
 ];
 
 const DemoGallery = () => {
-  const tick = useAiImageRotation();
-
   return (
     <section
       id="gallery"
@@ -76,12 +70,7 @@ const DemoGallery = () => {
             >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <img
-                  src={buildAiImageUrl(
-                    demo.prompt,
-                    900,
-                    1200,
-                    tick + index + 21,
-                  )}
+                  src={demo.image}
                   alt={demo.title}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"

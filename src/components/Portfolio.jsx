@@ -1,41 +1,45 @@
 import React from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
-import {
-  buildAiImageUrl,
-  useAiImageRotation,
-} from "../hooks/useAiImageRotation";
+import GourmetRestaurantModal from "./GourmetRestaurantModal";
+import TitanFitnessModal from "./TitanFitnessModal";
+import LuxuryRealEstateModal from "./LuxuryRealEstateModal";
+import SummerFashionCampaignModal from "./SummerFashionCampaignModal";
 
 const projects = [
   {
     title: "Gourmet Restaurant",
     category: "Website Development",
-    prompt:
-      "modern gourmet restaurant interior with elegant lighting and digital growth branding, premium lifestyle photo",
+    image:
+      "https://images.pexels.com/photos/7534178/pexels-photo-7534178.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
   },
   {
     title: "Titan Fitness Gym",
     category: "Branding & Social Media",
-    prompt:
-      "high energy fitness gym branding scene, modern neon workout space, social media campaign aesthetic",
+    image:
+      "https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
   },
   {
     title: "Luxury Real Estate",
     category: "Platform Development",
-    prompt:
-      "luxury real estate property showcase, sleek glass architecture, premium platform presentation",
+    image:
+      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
   },
   {
     title: "Summer Fashion Campaign",
     category: "Digital Marketing",
     desc: "Full-funnel strategy for a seasonal clothing release.",
-    prompt:
-      "summer fashion campaign editorial shoot with bright seasonal clothing, premium digital marketing style",
+    image:
+      "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
   },
 ];
 
 const Portfolio = () => {
-  const tick = useAiImageRotation();
+  const [isGourmetOpen, setIsGourmetOpen] = useState(false);
+  const [isTitanOpen, setIsTitanOpen] = useState(false);
+  const [isLuxuryOpen, setIsLuxuryOpen] = useState(false);
+  const [isSummerOpen, setIsSummerOpen] = useState(false);
 
   return (
     <section id="portfolio" className="py-16 md:py-24 bg-slate-950">
@@ -68,15 +72,27 @@ const Portfolio = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative rounded-3xl overflow-hidden cursor-pointer"
+              onClick={() => {
+                if (project.title === "Gourmet Restaurant") setIsGourmetOpen(true);
+                if (project.title === "Titan Fitness Gym") setIsTitanOpen(true);
+                if (project.title === "Luxury Real Estate") setIsLuxuryOpen(true);
+                if (project.title === "Summer Fashion Campaign") setIsSummerOpen(true);
+              }}
+              role={project.title === "Gourmet Restaurant" || project.title === "Titan Fitness Gym" || project.title === "Luxury Real Estate" || project.title === "Summer Fashion Campaign" ? "button" : undefined}
+              tabIndex={project.title === "Gourmet Restaurant" || project.title === "Titan Fitness Gym" || project.title === "Luxury Real Estate" || project.title === "Summer Fashion Campaign" ? 0 : undefined}
+              onKeyDown={(event) => {
+                if ((project.title === "Gourmet Restaurant" || project.title === "Titan Fitness Gym" || project.title === "Luxury Real Estate" || project.title === "Summer Fashion Campaign") && (event.key === "Enter" || event.key === " ")) {
+                  event.preventDefault();
+                  if (project.title === "Gourmet Restaurant") setIsGourmetOpen(true);
+                  if (project.title === "Titan Fitness Gym") setIsTitanOpen(true);
+                  if (project.title === "Luxury Real Estate") setIsLuxuryOpen(true);
+                  if (project.title === "Summer Fashion Campaign") setIsSummerOpen(true);
+                }
+              }}
             >
               <div className="aspect-[4/3] w-full overflow-hidden bg-slate-800">
                 <img
-                  src={buildAiImageUrl(
-                    project.prompt,
-                    1000,
-                    750,
-                    tick + index + 41,
-                  )}
+                  src={project.image}
                   alt={project.title}
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -95,7 +111,25 @@ const Portfolio = () => {
                   {project.desc}
                 </p>
                 <a
-                  href="#"
+                  href={project.title === "Gourmet Restaurant" || project.title === "Titan Fitness Gym" || project.title === "Luxury Real Estate" || project.title === "Summer Fashion Campaign" ? undefined : "#"}
+                  onClick={(event) => {
+                    if (project.title === "Gourmet Restaurant") {
+                      event.preventDefault();
+                      setIsGourmetOpen(true);
+                    }
+                    if (project.title === "Titan Fitness Gym") {
+                      event.preventDefault();
+                      setIsTitanOpen(true);
+                    }
+                    if (project.title === "Luxury Real Estate") {
+                      event.preventDefault();
+                      setIsLuxuryOpen(true);
+                    }
+                    if (project.title === "Summer Fashion Campaign") {
+                      event.preventDefault();
+                      setIsSummerOpen(true);
+                    }
+                  }}
                   className="inline-flex items-center text-emerald-400 font-medium hover:text-white transition-colors opacity-0 group-hover:opacity-100 duration-300 delay-200"
                 >
                   View Case Study <ExternalLink className="ml-2 h-4 w-4" />
@@ -105,6 +139,22 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
+      <GourmetRestaurantModal
+        open={isGourmetOpen}
+        onClose={() => setIsGourmetOpen(false)}
+      />
+      <TitanFitnessModal
+        open={isTitanOpen}
+        onClose={() => setIsTitanOpen(false)}
+      />
+      <LuxuryRealEstateModal
+        open={isLuxuryOpen}
+        onClose={() => setIsLuxuryOpen(false)}
+      />
+      <SummerFashionCampaignModal
+        open={isSummerOpen}
+        onClose={() => setIsSummerOpen(false)}
+      />
     </section>
   );
 };
