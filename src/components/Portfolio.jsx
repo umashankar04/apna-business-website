@@ -73,20 +73,47 @@ const Portfolio = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative rounded-3xl overflow-hidden cursor-pointer"
               onClick={() => {
-                if (project.title === "Gourmet Restaurant") setIsGourmetOpen(true);
+                if (project.title === "Gourmet Restaurant")
+                  setIsGourmetOpen(true);
                 if (project.title === "Titan Fitness Gym") setIsTitanOpen(true);
-                if (project.title === "Luxury Real Estate") setIsLuxuryOpen(true);
-                if (project.title === "Summer Fashion Campaign") setIsSummerOpen(true);
+                if (project.title === "Luxury Real Estate")
+                  setIsLuxuryOpen(true);
+                if (project.title === "Summer Fashion Campaign")
+                  setIsSummerOpen(true);
               }}
-              role={project.title === "Gourmet Restaurant" || project.title === "Titan Fitness Gym" || project.title === "Luxury Real Estate" || project.title === "Summer Fashion Campaign" ? "button" : undefined}
-              tabIndex={project.title === "Gourmet Restaurant" || project.title === "Titan Fitness Gym" || project.title === "Luxury Real Estate" || project.title === "Summer Fashion Campaign" ? 0 : undefined}
+              role={
+                project.title === "Gourmet Restaurant" ||
+                project.title === "Titan Fitness Gym" ||
+                project.title === "Luxury Real Estate" ||
+                project.title === "Summer Fashion Campaign"
+                  ? "button"
+                  : undefined
+              }
+              tabIndex={
+                project.title === "Gourmet Restaurant" ||
+                project.title === "Titan Fitness Gym" ||
+                project.title === "Luxury Real Estate" ||
+                project.title === "Summer Fashion Campaign"
+                  ? 0
+                  : undefined
+              }
               onKeyDown={(event) => {
-                if ((project.title === "Gourmet Restaurant" || project.title === "Titan Fitness Gym" || project.title === "Luxury Real Estate" || project.title === "Summer Fashion Campaign") && (event.key === "Enter" || event.key === " ")) {
+                if (
+                  (project.title === "Gourmet Restaurant" ||
+                    project.title === "Titan Fitness Gym" ||
+                    project.title === "Luxury Real Estate" ||
+                    project.title === "Summer Fashion Campaign") &&
+                  (event.key === "Enter" || event.key === " ")
+                ) {
                   event.preventDefault();
-                  if (project.title === "Gourmet Restaurant") setIsGourmetOpen(true);
-                  if (project.title === "Titan Fitness Gym") setIsTitanOpen(true);
-                  if (project.title === "Luxury Real Estate") setIsLuxuryOpen(true);
-                  if (project.title === "Summer Fashion Campaign") setIsSummerOpen(true);
+                  if (project.title === "Gourmet Restaurant")
+                    setIsGourmetOpen(true);
+                  if (project.title === "Titan Fitness Gym")
+                    setIsTitanOpen(true);
+                  if (project.title === "Luxury Real Estate")
+                    setIsLuxuryOpen(true);
+                  if (project.title === "Summer Fashion Campaign")
+                    setIsSummerOpen(true);
                 }
               }}
             >
@@ -111,7 +138,14 @@ const Portfolio = () => {
                   {project.desc}
                 </p>
                 <a
-                  href={project.title === "Gourmet Restaurant" || project.title === "Titan Fitness Gym" || project.title === "Luxury Real Estate" || project.title === "Summer Fashion Campaign" ? undefined : "#"}
+                  href={
+                    project.title === "Gourmet Restaurant" ||
+                    project.title === "Titan Fitness Gym" ||
+                    project.title === "Luxury Real Estate" ||
+                    project.title === "Summer Fashion Campaign"
+                      ? undefined
+                      : "#"
+                  }
                   onClick={(event) => {
                     if (project.title === "Gourmet Restaurant") {
                       event.preventDefault();
