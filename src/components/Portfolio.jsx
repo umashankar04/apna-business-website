@@ -1,36 +1,42 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
+import {
+  buildAiImageUrl,
+  useAiImageRotation,
+} from "../hooks/useAiImageRotation";
 
 const projects = [
   {
     title: "Gourmet Restaurant",
     category: "Website Development",
-    image:
-      "https://images.pexels.com/photos/7534178/pexels-photo-7534178.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    prompt:
+      "modern gourmet restaurant interior with elegant lighting and digital growth branding, premium lifestyle photo",
   },
   {
     title: "Titan Fitness Gym",
     category: "Branding & Social Media",
-    image:
-      "https://images.pexels.com/photos-3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    prompt:
+      "high energy fitness gym branding scene, modern neon workout space, social media campaign aesthetic",
   },
   {
     title: "Luxury Real Estate",
     category: "Platform Development",
-    image:
-      "https://images.pexels.com/photos-3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    prompt:
+      "luxury real estate property showcase, sleek glass architecture, premium platform presentation",
   },
   {
     title: "Summer Fashion Campaign",
     category: "Digital Marketing",
     desc: "Full-funnel strategy for a seasonal clothing release.",
-    image:
-      "https://images.pexels.com/photos-2769274/pexels-photo-2769274.jpeg?auto=compress&cs=tinysrgb&w=800&q=80",
+    prompt:
+      "summer fashion campaign editorial shoot with bright seasonal clothing, premium digital marketing style",
   },
 ];
 
 const Portfolio = () => {
+  const tick = useAiImageRotation();
+
   return (
     <section id="portfolio" className="py-16 md:py-24 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,8 +71,14 @@ const Portfolio = () => {
             >
               <div className="aspect-[4/3] w-full overflow-hidden bg-slate-800">
                 <img
-                  src={project.image}
+                  src={buildAiImageUrl(
+                    project.prompt,
+                    1000,
+                    750,
+                    tick + index + 41,
+                  )}
                   alt={project.title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </div>

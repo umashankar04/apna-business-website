@@ -2,8 +2,20 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, CheckCircle2 } from "lucide-react";
 import ownerImage from "../assets/owner.png";
+import {
+  buildAiImageUrl,
+  useAiImageRotation,
+} from "../hooks/useAiImageRotation";
 
 const About = () => {
+  const tick = useAiImageRotation();
+  const aboutImage = buildAiImageUrl(
+    "creative digital agency team in india planning campaigns around a table, warm cinematic light, modern startup workspace, editorial style",
+    900,
+    1100,
+    tick + 11,
+  );
+
   return (
     <section id="about" className="py-24 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,8 +29,9 @@ const About = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src={aboutImage}
                 alt="Our Team"
+                loading="lazy"
                 className="rounded-2xl shadow-2xl relative z-10 w-full h-[500px] object-cover opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500"
               />
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-emerald-500/20 rounded-full blur-2xl"></div>

@@ -4,8 +4,20 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import ownerImage from "../assets/owner.png";
+import {
+  buildAiImageUrl,
+  useAiImageRotation,
+} from "../hooks/useAiImageRotation";
 
 const Hero = () => {
+  const tick = useAiImageRotation();
+  const heroImage = buildAiImageUrl(
+    "modern indian startup team collaborating in a stylish agency office, cinematic lighting, business growth, premium editorial photography",
+    1200,
+    900,
+    tick + 1,
+  );
+
   return (
     <section
       id="hero"
@@ -57,10 +69,18 @@ const Hero = () => {
               </RouterLink>
             </div>
             <div className="mt-4 flex items-center gap-3">
-              <img src={ownerImage} alt="Owner" className="h-12 w-12 rounded-full object-cover shadow-sm" />
+              <img
+                src={ownerImage}
+                alt="Owner"
+                className="h-12 w-12 rounded-full object-cover shadow-sm"
+              />
               <div>
-                <div className="text-sm font-semibold text-white">Uma Shankar</div>
-                <div className="text-xs text-slate-400">Founder — Apna Business</div>
+                <div className="text-sm font-semibold text-white">
+                  Uma Shankar
+                </div>
+                <div className="text-xs text-slate-400">
+                  Founder — Apna Business
+                </div>
               </div>
             </div>
           </motion.div>
@@ -73,8 +93,9 @@ const Hero = () => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-900 p-2">
               <img
-                src="https://images.pexels.com/photos/3771057/pexels-photo-3771057.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80"
+                src={heroImage}
                 alt="Indian Startup Team Working"
+                loading="lazy"
                 className="w-full h-auto rounded-xl opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition-all duration-500"
               />
               {/* Floating badges */}
